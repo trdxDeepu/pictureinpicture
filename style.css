@@ -30,5 +30,6 @@ button{
     font-size: 25px;
     color: white;
     text-shadow: 0 2px 5px black ;
+    background: linear-gradient(to top, #696969,#575757);
 
 }
