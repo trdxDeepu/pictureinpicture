@@ -6,9 +6,9 @@ const button = document.getElementById('button');
 async function selectMediaStream( ) {
     try {
 
-        const mediaStream = await navigator.mediaDevices.getDisplayMedia(); 
+        const mediaStream = await  navigator.mediaDevices.getDisplayMedia(); 
         videoElement.srcObject = mediaStream;
-        videoElement.onloadeddata = () => {
+        videoElement.onloadedmetadata = () => {
             videoElement.play();
         }
     }
@@ -21,9 +21,8 @@ async function selectMediaStream( ) {
 
 button.addEventListener('click', async () =>{
 button.disabled = true;
+await videoElement.requestPictureInPicture();
+button.disabled = false;
 
-await videoElement.requesPictureInPicture();
-button.disabled=false;
 });
-
 selectMediaStream();
